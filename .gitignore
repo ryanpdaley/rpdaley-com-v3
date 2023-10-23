@@ -1,2 +1,6 @@
-# Dependency directories
-node_modules/
+node_modules
+/.cache
+/build
+/public/build
+.env
+.DS_Store
