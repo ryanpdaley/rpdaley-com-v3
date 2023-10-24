@@ -3,8 +3,8 @@ import Navigation from "~/components/Navigation";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "RP DALEY | rpdaley.com" },
-    { name: "description", content: "Welcome to Remix!" },
+    { title: "RP DALEY | rpdaley.com/about" },
+    { name: "description", content: "About" },
   ];
 };
 
@@ -12,7 +12,7 @@ export default function Index() {
   return (
     <>
       <Navigation></Navigation>
-      <div>Home</div>
+      <div>About</div>
     </>
   );
 }
