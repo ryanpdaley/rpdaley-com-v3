@@ -1,32 +1,33 @@
 import { NavLink } from "@remix-run/react";
 
-export default function Navigation() {
+const navMap = [
+  { path: "/", label: "Home" },
+  { path: "/about", label: "About" },
+  { path: "/uses", label: "Uses" },
+];
+
+type NavigationDict = {
+  navDict: {
+    path: string;
+    label: string;
+  };
+};
+
+const NavItem = ({ navDict }: NavigationDict) => {
   return (
-    <>
-      <NavLink
-        to="/"
-        className={({ isActive, isPending }) =>
-          isPending ? "pending" : isActive ? "active" : ""
-        }
-      >
-        Home
-      </NavLink>
-      <NavLink
-        to="/about"
-        className={({ isActive, isPending }) =>
-          isPending ? "pending" : isActive ? "active" : ""
-        }
-      >
-        About
-      </NavLink>
-      <NavLink
-        to="/uses"
-        className={({ isActive, isPending }) =>
-          isPending ? "pending" : isActive ? "active" : ""
-        }
-      >
-        Uses
-      </NavLink>
-    </>
+    <NavLink
+      to={navDict.path}
+      className={({ isActive, isPending }) =>
+        isPending ? "pending" : isActive ? "bg-violet-700" : ""
+      }
+    >
+      {navDict.label}
+    </NavLink>
   );
+};
+
+export default function Navigation() {
+  return navMap.map((navItem, index) => {
+    return <NavItem navDict={navItem} key={index} />;
+  });
 }
