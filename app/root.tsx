@@ -11,6 +11,7 @@ import {
 
 import faviconAssetUrl from "./assets/favicon.svg";
 import styles from "./styles/tailwind.css";
+import Navigation from "./components/Navigation";
 
 export const links: LinksFunction = () => [
   { rel: "icon", type: "image/svg+xml", href: faviconAssetUrl },
@@ -28,6 +29,7 @@ export default function App() {
         <Links />
       </head>
       <body>
+        <Navigation />
         <Outlet />
         <ScrollRestoration />
         <Scripts />
